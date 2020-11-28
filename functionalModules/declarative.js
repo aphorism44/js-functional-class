@@ -1,9 +1,10 @@
-import User from './User.js';
+//module 3
+import User from './models/User.js';
 
 const declarative = {
 
   testDeclarativeModule() { console.log("in declarative module"); }
-
+  //basic list functions
   , testArrayFunctions() {
     let users = [
       new User("jesse", 557)
@@ -22,6 +23,13 @@ const declarative = {
     console.log(changedName);
     let sum = users.reduce((accumulator, u) => { return accumulator + u.id;  }, 0);
     console.log(sum);
+    //chaining functions
+    let numbers = [2, 4, 6, 10, 16];
+    //subtract 1 from each, and if it's divisible by 3, sum it
+    let weirdSum = numbers.map((n) => { return n - 1; })
+      .filter((n) => { return n % 3 === 0; })
+      .reduce((accumulator, n) => { return accumulator + n;  }, 0);
+    console.log(weirdSum);
   }
 
 
